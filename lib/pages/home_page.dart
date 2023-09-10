@@ -9,22 +9,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
+
     var wordPair = appState.current;
 
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('A random idea'),
-            Text(wordPair.asPascalCase),
-            ElevatedButton(
-              onPressed: () => appState.generateWordPair(),
-              child: const Text('Next'),
-            )
-          ],
-        ),
+        body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text('A random idea'),
+          Text(wordPair.asPascalCase),
+          ElevatedButton(
+            onPressed: () => appState.generateWordPair(),
+            child: const Text('Next'),
+          )
+        ],
       ),
-    );
+    ));
   }
 }
